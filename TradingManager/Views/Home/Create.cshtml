@@ -1,0 +1,125 @@
+@model TradingManager.Model.Transactions
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Create</title>
+</head>
+<body>
+
+<form asp-action="Create">
+    <div class="form-horizontal">
+        <h4>Transactions</h4>
+        <hr />
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+            <label asp-for="TransactionId" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="TransactionId" class="form-control" value = "@ViewBag.transactionId"/>
+                <span asp-validation-for="TransactionId" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="TransactionType" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <select asp-for="TransactionType" class="form-control">
+                    <option value="0">Exchange</option>
+                    <option value="1">Margin</option>
+                </select>
+                <span asp-validation-for="TransactionType" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="OrderType" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <select asp-for="OrderType" class="form-control">
+                    <option value="0">Market</option>
+                    <option value="1">Limit</option>
+                    <option value="2">Stop</option>
+                    <option value="3">StopLimit</option>
+                    <option value="4">TrailingStop</option>
+                    <option value="5">FillOrKill</option>
+                </select>
+                <span asp-validation-for="OrderType" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Price" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Price" class="form-control" />
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Amount" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Amount" class="form-control" />
+                <span asp-validation-for="Amount" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="UserId" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="UserId" class="form-control" />
+                <span asp-validation-for="UserId" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Exchange" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <select asp-for="Exchange" class="form-control">
+                    <option value="0">BitFinex</option>
+                    <option value="1">Coinbase</option>
+                    <option value="2">OkCoin</option>
+                    <option value="3">BitMex</option>
+                </select>
+                <span asp-validation-for="Exchange" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Symbol" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <select asp-for="Symbol" class="form-control">
+                    <option value="0">BTCUSD</option>
+                    <option value="1">ETHUSD</option>
+                    <option value="2">LTCUSD</option>
+                    <option value="3">ZECUSD</option>
+                </select>
+                <span asp-validation-for="Symbol" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Status" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <select asp-for="Status" class="form-control">
+                    <option value="0">New</option>
+                    <option value="1">Filled</option>
+                    <option value="2">PartiallyFilled</option>
+                    <option value="3">Canceled</option>
+                </select>
+                <span asp-validation-for="Status" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+</form>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+</body>
+</html>

@@ -1,0 +1,115 @@
+@model TradingManager.Model.Transactions
+
+@{
+    Layout = null;
+}
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Edit</title>
+</head>
+<body>
+
+<form asp-action="Edit">
+    <div class="form-horizontal">
+        <h4>Transactions</h4>
+        <hr />
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <input type="hidden" asp-for="Id" />
+        <div class="form-group">
+            <label asp-for="TransactionId" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="TransactionId" class="form-control" />
+                <span asp-validation-for="TransactionId" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="TransactionTime" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="TransactionTime" class="form-control" />
+                <span asp-validation-for="TransactionTime" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="TransactionType" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <select asp-for="TransactionType" class="form-control"></select>
+                <span asp-validation-for="TransactionType" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="OrderType" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <select asp-for="OrderType" class="form-control"></select>
+                <span asp-validation-for="OrderType" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Price" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Price" class="form-control" />
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Amount" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Amount" class="form-control" />
+                <span asp-validation-for="Amount" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Leverage" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Leverage" class="form-control" />
+                <span asp-validation-for="Leverage" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="TranscationFee" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="TranscationFee" class="form-control" />
+                <span asp-validation-for="TranscationFee" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="UserId" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="UserId" class="form-control" />
+                <span asp-validation-for="UserId" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Exchange" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <select asp-for="Exchange" class="form-control"></select>
+                <span asp-validation-for="Exchange" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Symbol" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <select asp-for="Symbol" class="form-control"></select>
+                <span asp-validation-for="Symbol" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+</form>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+</body>
+</html>

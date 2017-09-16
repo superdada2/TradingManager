@@ -1,0 +1,93 @@
+@model TradingManager.Model.Transactions
+
+@{
+    Layout = null;
+}
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+
+<div>
+    <h4>Transactions</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TransactionId)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TransactionId)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TransactionTime)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TransactionTime)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TransactionType)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TransactionType)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.OrderType)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.OrderType)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Amount)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Amount)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Leverage)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Leverage)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TranscationFee)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TranscationFee)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.UserId)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.UserId)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Exchange)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Exchange)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Symbol)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Symbol)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
+</body>
+</html>

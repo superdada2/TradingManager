@@ -1,0 +1,98 @@
+@model TradingManager.Model.Transactions
+
+@{
+    Layout = null;
+}
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Delete</title>
+</head>
+<body>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Transactions</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <input type="hidden" asp-for="Id" />
+        <dt>
+            @Html.DisplayNameFor(model => model.TransactionId)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TransactionId)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TransactionTime)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TransactionTime)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TransactionType)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TransactionType)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.OrderType)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.OrderType)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Amount)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Amount)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Leverage)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Leverage)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TranscationFee)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TranscationFee)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.UserId)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.UserId)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Exchange)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Exchange)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Symbol)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Symbol)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            <a asp-action="Index">Back to List</a>
+        </div>
+    </form>
+</div>
+</body>
+</html>

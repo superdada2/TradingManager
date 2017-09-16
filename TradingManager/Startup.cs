@@ -31,7 +31,6 @@ namespace TradingManager
         {
             // Add framework services.
             services.AddMvc();
-            //add ef
             services.AddDbContext<TMDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"), b => b.MigrationsAssembly("TradingManager")));
         }
@@ -42,12 +41,12 @@ namespace TradingManager
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
 
-            app.UseMvc(routes=>
+            app.UseMvc(routes =>
             {
                 routes.MapRoute(
-                    name:"api",
-                    template:"api/{controller}/{action}/{id?}",
-                    defaults: new { controller = "TM", action = "Get"}
+                    name: "api",
+                    template: "api/{controller}/{action}/{id?}",
+                    defaults: new { controller = "TM", action = "Get" }
                     );
                 routes.MapRoute("dafault", "{controller=Home}/{action=Index}/{id?}");
             }
